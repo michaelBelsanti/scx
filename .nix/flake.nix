@@ -264,6 +264,7 @@
 
           # scx_chaos scheduler built with Nix
           scx_chaos = cranePackages.makeCargoSchedulerPackage "scx_chaos";
+          scx_cake = cranePackages.makeCargoSchedulerPackage "scx_cake";
         } // (with lib.attrsets; mapAttrs'
           (name: details: nameValuePair "kernel_${name}" (pkgs.callPackage ./pkgs/build-kernel.nix {
             inherit name;
